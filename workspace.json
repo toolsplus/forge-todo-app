@@ -1,4 +1,9 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "forge-app": "apps/forge-app",
+    "todo-api": "libs/todo-api",
+    "todo-panel": "apps/todo-panel",
+    "todo-panel-e2e": "apps/todo-panel-e2e"
+  }
 }

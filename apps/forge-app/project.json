@@ -1,0 +1,52 @@
+{
+  "root": "apps/forge-app",
+  "sourceRoot": "apps/forge-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@toolsplus/nx-forge:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/forge-app"
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run forge-app:build --watch"
+          },
+          {
+            "command": "forge tunnel"
+          }
+        ],
+        "cwd": "dist/apps/forge-app",
+        "parallel": true
+      }
+    },
+    "deploy": {
+      "executor": "@toolsplus/nx-forge:deploy",
+      "options": {
+        "outputPath": "dist/apps/forge-app"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/forge-app/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/forge-app"],
+      "options": {
+        "jestConfig": "apps/forge-app/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["todo-panel"]
+}

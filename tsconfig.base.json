@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@forge-todo-app/todo-api": ["libs/todo-api/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
