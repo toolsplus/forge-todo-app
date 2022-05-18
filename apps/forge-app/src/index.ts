@@ -1,6 +1,6 @@
 import Resolver from '@forge/resolver';
 import { storage } from '@forge/api';
-import { CreateTodoInput, Todo } from '@forge-todo-app/todo-api';
+import {CreateTodoInput, logger, Todo} from '@forge-todo-app/todo-api';
 
 const resolver = new Resolver();
 
@@ -17,6 +17,7 @@ const getAll = async (listId: string): Promise<Todo[]> => {
 };
 
 resolver.define('get-all', ({ context }) => {
+  logger(`[resolver] get-all: ${JSON.stringify(context)}`);
   return getAll(getListKeyFromContext(context));
 });
 

@@ -12,3 +12,7 @@ export interface Todo {
   label: string;
   isChecked: boolean;
 }
+
+export const logger = (message: string) => {
+  console.log(`[TODO]: ${message}`);
+}
