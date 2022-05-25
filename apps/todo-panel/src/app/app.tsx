@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Fragment, FormEvent } from 'react';
 import { invoke } from '@forge/bridge';
-import { Todo, CreateTodoInput, DeleteTodoInput } from '@forge-todo-app/todo-api';
+import {Todo, CreateTodoInput, DeleteTodoInput, logger} from '@forge-todo-app/todo-api';
 import Button from '@atlaskit/button';
 import LoadingButton from '@atlaskit/button/loading-button';
 import { Checkbox } from '@atlaskit/checkbox';
@@ -42,6 +42,7 @@ function App() {
   }
 
   const createTodo = async (label: string) => {
+    logger(`[todo-panel] create: ${label}`);
     const newTodoList = [
       ...(todos || []),
       { label, isChecked: false, isSaving: true },
