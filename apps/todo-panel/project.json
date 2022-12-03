@@ -1,10 +1,11 @@
 {
-  "root": "apps/todo-panel",
+  "name": "todo-panel",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/todo-panel/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -47,7 +48,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "todo-panel:build",
@@ -72,7 +73,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/todo-panel"],
+      "outputs": ["{workspaceRoot}/coverage/apps/todo-panel"],
       "options": {
         "jestConfig": "apps/todo-panel/jest.config.ts",
         "passWithNoTests": true

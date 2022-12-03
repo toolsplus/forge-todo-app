@@ -1,5 +1,6 @@
 {
-  "root": "apps/forge-app",
+  "name": "forge-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/forge-app/src",
   "projectType": "application",
   "targets": {
@@ -11,7 +12,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
@@ -40,7 +41,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/forge-app"],
+      "outputs": ["{workspaceRoot}/coverage/apps/forge-app"],
       "options": {
         "jestConfig": "apps/forge-app/jest.config.ts",
         "passWithNoTests": true

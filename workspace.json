@@ -5,5 +5,6 @@
     "todo-api": "libs/todo-api",
     "todo-panel": "apps/todo-panel",
     "todo-panel-e2e": "apps/todo-panel-e2e"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

@@ -1,5 +1,6 @@
 {
-  "root": "apps/todo-panel-e2e",
+  "name": "todo-panel-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/todo-panel-e2e/src",
   "projectType": "application",
   "targets": {

@@ -1,5 +1,6 @@
 {
-  "root": "libs/todo-api",
+  "name": "todo-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/todo-api/src",
   "targets": {
     "build": {
@@ -21,7 +22,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/todo-api"],
+      "outputs": ["{workspaceRoot}/coverage/libs/todo-api"],
       "options": {
         "jestConfig": "libs/todo-api/jest.config.ts",
         "passWithNoTests": true
