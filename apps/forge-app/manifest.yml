@@ -14,6 +14,8 @@ modules:
 resources:
   - key: todo-panel
     path: todo-panel
+    tunnel:
+      port: 3210
 permissions:
   scopes:
     - storage:app

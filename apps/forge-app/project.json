@@ -12,18 +12,9 @@
       }
     },
     "serve": {
-      "executor": "nx:run-commands",
+      "executor": "@toolsplus/nx-forge:tunnel",
       "options": {
-        "commands": [
-          {
-            "command": "nx run forge-app:build --watch"
-          },
-          {
-            "command": "forge tunnel"
-          }
-        ],
-        "cwd": "dist/apps/forge-app",
-        "parallel": true
+        "outputPath": "dist/apps/forge-app"
       }
     },
     "deploy": {
@@ -45,6 +36,17 @@
       "options": {
         "jestConfig": "apps/forge-app/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "tunnel": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "forge tunnel"
+          }
+        ],
+        "cwd": "dist/apps/forge-app"
       }
     }
   },
